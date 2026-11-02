@@ -1,0 +1,17 @@
+/* Only the opening film and its persistent companion handoff are replaced. */
+.intro{position:fixed;inset:0;z-index:150;pointer-events:none;overflow:hidden;background:transparent;opacity:1;visibility:visible}
+.intro-stage{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+#noodleCanvas{display:block;width:100%;height:100%;pointer-events:none}
+.intro-top{position:absolute;top:34px;left:5vw;font-size:13px;letter-spacing:.25em;font-weight:900;z-index:8}
+.intro-skip{position:absolute;right:4vw;top:26px;background:rgba(248,245,238,.86);border:1px solid var(--navy);border-radius:999px;padding:10px 15px;font-size:12px;font-weight:900;z-index:10;pointer-events:auto;backdrop-filter:blur(8px)}
+.noodle-3d.intro-finished .intro{opacity:1;visibility:visible;z-index:98}
+.intro-finished .intro-top,.intro-finished .intro-skip{display:none}
+.noodle-3d .companion-button img{visibility:hidden;animation:none}
+.noodle-3d .companion-button{width:var(--noodle-width,160px);height:var(--noodle-height,160px);filter:none}
+.noodle-3d .speech{bottom:calc(var(--noodle-height,160px) + 6px)}
+.noodle-fallback .intro{display:none}
+/* First entrance stays visible under the browser's reduced-motion preference. */
+.noodle-3d:not(.intro-finished) .companion{opacity:0;pointer-events:none}
+/* Freeze the referenced illustration; never shorten an infinite dog animation to 0.01ms. */
+.hero-dog{animation:none!important;transform:translate(0,28px) rotate(-3deg)!important;will-change:auto}
+.companion-button img,.companion-button:hover img{animation:none!important}
